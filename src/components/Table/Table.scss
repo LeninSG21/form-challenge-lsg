@@ -1,0 +1,33 @@
+$border-style: 1px solid black;
+
+%cell {
+  margin: 0;
+  padding: 0.5rem;
+  border-bottom: $border-style;
+  border-right: $border-style;
+}
+
+table {
+  border-spacing: 0;
+  border: $border-style;
+
+  tr {
+    &:last-child {
+      td {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  th,
+  td {
+    margin: 0;
+    padding: 0.5rem;
+    border-bottom: $border-style;
+    border-right: $border-style;
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
+}

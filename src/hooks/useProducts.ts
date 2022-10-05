@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { ProductsApi } from '../api/ProductsApi';
 import {
@@ -37,5 +37,13 @@ export function useProducts(callInInitialRender = true) {
     }
   }, []);
 
-  return { products, fetchProducts, status };
+  const parsdStatus = useMemo(() => {
+    const isLoading =
+      status === REQUEST_STATUS.idle || status === REQUEST_STATUS.pending;
+    const isPending = status === REQUEST_STATUS.pending;
+    const isRejected = status === REQUEST_STATUS.rejected;
+    return { isLoading, isPending, isRejected };
+  }, [status]);
+
+  return { products, fetchProducts, ...parsdStatus };
 }
