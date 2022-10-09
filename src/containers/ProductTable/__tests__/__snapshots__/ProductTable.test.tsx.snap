@@ -1,0 +1,198 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductTable Table should match table snapshot 1`] = `
+<div>
+  <div
+    class="general-filters"
+  >
+    <input
+      placeholder="Search 1 items..."
+      value=""
+    />
+  </div>
+  <table
+    role="table"
+    style="min-width: 0px;"
+  >
+    <thead>
+      <tr
+        role="row"
+        style="display: flex; flex: 1 0 auto; min-width: 0px;"
+      >
+        <th
+          colspan="1"
+          role="columnheader"
+          style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+        >
+          <div
+            style="cursor: pointer;"
+            title="Toggle SortBy"
+          >
+            Code
+             ↕️
+          </div>
+          <div>
+            <input
+              class="substring-filter"
+              placeholder="Search 1 items..."
+              value=""
+            />
+          </div>
+        </th>
+        <th
+          colspan="1"
+          role="columnheader"
+          style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+        >
+          <div
+            style="cursor: pointer;"
+            title="Toggle SortBy"
+          >
+            Position
+             ↕️
+          </div>
+          <div>
+            <div
+              class="range-filter"
+            >
+              <input
+                placeholder="Min"
+                type="number"
+              />
+              to
+              <input
+                placeholder="Max"
+                type="number"
+              />
+            </div>
+          </div>
+        </th>
+        <th
+          colspan="1"
+          role="columnheader"
+          style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+        >
+          <div
+            style="cursor: pointer;"
+            title="Toggle SortBy"
+          >
+            Quantity
+             ↕️
+          </div>
+          <div>
+            <div
+              class="range-filter"
+            >
+              <input
+                placeholder="Min"
+                type="number"
+              />
+              to
+              <input
+                placeholder="Max"
+                type="number"
+              />
+            </div>
+          </div>
+        </th>
+        <th
+          colspan="1"
+          role="columnheader"
+          style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+        >
+          <div
+            style="cursor: pointer;"
+            title="Toggle SortBy"
+          >
+            Price
+             ↕️
+          </div>
+          <div>
+            <div
+              class="range-filter"
+            >
+              <input
+                placeholder="Min"
+                type="number"
+              />
+              to
+              <input
+                placeholder="Max"
+                type="number"
+              />
+            </div>
+          </div>
+        </th>
+        <th
+          colspan="1"
+          role="columnheader"
+          style="box-sizing: border-box; flex: 300 0 auto; min-width: 0px; width: 300px;"
+        >
+          <div>
+            Image
+          </div>
+          <div />
+        </th>
+        <th
+          colspan="1"
+          role="columnheader"
+          style="box-sizing: border-box; flex: 300 0 auto; min-width: 0px; width: 300px;"
+        >
+          <div>
+            Description
+          </div>
+          <div />
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      role="rowgroup"
+    >
+      <tr
+        role="row"
+        style="display: flex; flex: 1 0 auto; min-width: 0px;"
+      >
+        <td
+          role="cell"
+          style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+        >
+          HWR16-03
+        </td>
+        <td
+          role="cell"
+          style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+        >
+          1
+        </td>
+        <td
+          role="cell"
+          style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+        >
+          1
+        </td>
+        <td
+          role="cell"
+          style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+        >
+          500
+        </td>
+        <td
+          role="cell"
+          style="box-sizing: border-box; flex: 300 0 auto; min-width: 0px; width: 300px;"
+        >
+          <img
+            alt="01.png"
+            src="01.png"
+          />
+        </td>
+        <td
+          role="cell"
+          style="box-sizing: border-box; flex: 300 0 auto; min-width: 0px; width: 300px;"
+        >
+          Upright for room designs incl. floor profile in stainless steel appearance, depth: 250 - 900 mm, edging on both sides, Plinth height 70 mm: 2253 mm Plinth height 100 mm: 2283 mm Plinth height 150 mm: 2333 mm Plinth height 200 mm: 2383 mm
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
