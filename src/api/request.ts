@@ -1,4 +1,5 @@
-/* global RequestInit */
+import axios, { AxiosRequestConfig } from 'axios';
+
 const errorParser = (statusCode: number, statusText: string) => {
   if (statusCode >= 500) {
     return '[500] Something went wrong. Try again';
@@ -16,28 +17,39 @@ const errorParser = (statusCode: number, statusText: string) => {
 
 export const abortController = new AbortController();
 
-const DEFAULT_REQUEST_OPTIONS: RequestInit = {
+type RequesOptions = {
+  method?: 'GET' | 'POST' | 'PUT' | 'DELETE';
+  body?: unknown;
+};
+
+type RequestResponse<T> = {
+  data: T;
+  status: number;
+};
+
+const DEFAULT_REQUEST_OPTIONS: RequesOptions = {
   method: 'GET',
-  signal: abortController.signal,
 };
 
 export async function request<T = undefined>(
   url: string,
-  options?: RequestInit,
-): Promise<T> {
+  options?: RequesOptions,
+): Promise<RequestResponse<T>> {
   const optionsWithDefault = { ...DEFAULT_REQUEST_OPTIONS, ...options };
 
-  try {
-    const response = await fetch(url, optionsWithDefault);
-    if (response.ok) {
-      return response.json();
-    }
-    throw new Error(errorParser(response.status, response.statusText));
-  } catch (error: any) {
-    if (error.name === 'AbortError') {
-      console.info('aborted');
-      return {} as T;
-    }
-    throw error;
-  }
+  const instance = axios.create();
+  const axiosOptions: AxiosRequestConfig = {
+    url,
+    method: optionsWithDefault.method,
+    data: optionsWithDefault.body,
+  };
+
+  return instance
+    .request<T>(axiosOptions)
+    .then((response) => ({ data: response.data, status: response.status }))
+    .catch((error) => {
+      throw new Error(
+        errorParser(error.response.status, error.response.statusText),
+      );
+    });
 }
