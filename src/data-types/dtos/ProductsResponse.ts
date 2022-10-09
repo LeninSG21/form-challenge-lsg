@@ -1,4 +1,4 @@
-export interface ProductModel {
+interface ProductResponse {
   code: string;
   position: number;
   quantity: number;
@@ -7,4 +7,6 @@ export interface ProductModel {
   description: string;
 }
 
-export type ProductsModel = ProductModel[];
+export interface ProductsResponse {
+  products: ProductResponse[];
+}

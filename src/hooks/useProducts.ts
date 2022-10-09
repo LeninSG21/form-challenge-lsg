@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { ProductsApi } from '../api/ProductsApi';
 import {
-  ProductModel,
+  ProductsModel,
   RequestStatusType,
   REQUEST_STATUS,
 } from '../data-types/models';
@@ -14,7 +14,7 @@ import {
  */
 export function useProducts(callInInitialRender = true) {
   const [status, setStatus] = useState<RequestStatusType>(REQUEST_STATUS.idle);
-  const [products, setProducts] = useState<ProductModel[]>([]);
+  const [products, setProducts] = useState<ProductsModel>([]);
 
   const fetchProducts = async () => {
     try {
@@ -25,8 +25,7 @@ export function useProducts(callInInitialRender = true) {
     } catch (error) {
       //* In here, the error handling strategy could be applied. Show the message
       //* via a notification component, or feed it to a logging tool, for example
-      // eslint-disable-next-line no-console
-      console.log(error);
+      console.info(error);
       setStatus(REQUEST_STATUS.rejected);
     }
   };
