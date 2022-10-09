@@ -25,7 +25,6 @@ export function useProducts(callInInitialRender = true) {
     } catch (error) {
       //* In here, the error handling strategy could be applied. Show the message
       //* via a notification component, or feed it to a logging tool, for example
-      console.info(error);
       setStatus(REQUEST_STATUS.rejected);
     }
   };
