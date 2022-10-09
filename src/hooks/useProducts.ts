@@ -36,13 +36,13 @@ export function useProducts(callInInitialRender = true) {
     }
   }, []);
 
-  const parsdStatus = useMemo(() => {
+  const parsedStatus = useMemo(() => {
     const isLoading =
       status === REQUEST_STATUS.idle || status === REQUEST_STATUS.pending;
-    const isPending = status === REQUEST_STATUS.pending;
+    const isResolved = status === REQUEST_STATUS.resolved;
     const isRejected = status === REQUEST_STATUS.rejected;
-    return { isLoading, isPending, isRejected };
+    return { isLoading, isResolved, isRejected };
   }, [status]);
 
-  return { products, fetchProducts, ...parsdStatus };
+  return { products, fetchProducts, ...parsedStatus };
 }
