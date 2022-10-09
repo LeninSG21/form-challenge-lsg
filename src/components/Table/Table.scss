@@ -5,6 +5,10 @@ $border-style: 1px solid black;
   padding: 0.5rem;
   border-bottom: $border-style;
   border-right: $border-style;
+
+  &:last-child {
+    border-right: 0;
+  }
 }
 
 table {
@@ -19,15 +23,36 @@ table {
     }
   }
 
-  th,
-  td {
-    margin: 0;
-    padding: 0.5rem;
-    border-bottom: $border-style;
-    border-right: $border-style;
+  th {
+    @extend %cell;
+  }
 
-    &:last-child {
-      border-right: 0;
-    }
+  td {
+    @extend %cell;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.substring-filter {
+  width: -webkit-fill-available;
+}
+
+.range-filter {
+  display: flex;
+  width: -webkit-fill-available;
+  justify-content: space-between;
+
+  & > input {
+    max-width: 44px;
+  }
+}
+
+.general-filters {
+  margin-bottom: 16px;
+
+  & > :first-child {
+    margin-right: 16px;
   }
 }

@@ -16,5 +16,5 @@ export function ProductTable() {
       </div>
     );
   }
-  return <Table columns={COLUMNS} data={products} />;
+  return <Table columns={COLUMNS} data={products} withGlobalFilter />;
 }
