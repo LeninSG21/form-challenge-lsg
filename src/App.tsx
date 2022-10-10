@@ -1,7 +1,13 @@
-import './App.css';
+import { ProductTable } from './containers/ProductTable';
+
+import './App.scss';
 
 function App() {
-  return <div>hola</div>;
+  return (
+    <div>
+      <ProductTable />
+    </div>
+  );
 }
 
 export default App;

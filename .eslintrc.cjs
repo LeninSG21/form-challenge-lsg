@@ -3,7 +3,6 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   extends: [
     'plugin:@typescript-eslint/recommended',
-    'eslint:recommended',
     'plugin:react/recommended',
     'airbnb',
     'prettier',
@@ -19,6 +18,7 @@ module.exports = {
     'prettier/prettier': ['error'],
 
     // react overrides
+    'react/require-default-props': 'off',
     'react/jsx-props-no-spreading': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.jsx', '.tsx'] }],
     'react/function-component-definition': [
@@ -60,6 +60,8 @@ module.exports = {
 
     // others
     'no-console': ['error', { allow: ['warn', 'info'] }],
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': ['error'],
   },
   settings: {
     'import/resolver': {
